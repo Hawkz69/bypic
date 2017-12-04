@@ -1,0 +1,98 @@
+
+<ion-header>
+ 
+    <ion-toolbar color="danger">
+
+        <ion-title>O que tá rolando</ion-title>
+     <ion-buttons left>
+        <button ion-button icon-only menuToggle>
+          
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>   
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="icons" color="danger">
+          <ion-segment-button value="camera">
+            <ion-icon name="pin"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="bookmark">
+            <ion-icon name="people"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
+  </ion-header>
+
+
+
+
+<ion-content>
+   
+    <ion-list inline>
+        <ion-list-header>
+            Novos envios!
+          </ion-list-header>    
+       
+          <div style="overflow-x: scroll; width: auto; white-space: nowrap; height: 70px; background-color:lavenderblush">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+             <img src="assets/imgs/generic-avatar.png" class="div-foto">
+          </div>
+            
+           
+        <br/>
+        <ion-list-header>
+            Vistos recentemente
+          </ion-list-header>    
+       
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/imgs/generic-avatar.png">
+          </ion-avatar>
+          <h2>Cher</h2>
+         </ion-item>      
+    
+     
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="assets/imgs/generic-avatar.png">
+            </ion-avatar>
+            <h2>Fulano</h2>
+          </ion-item>   
+          
+          <ion-item>
+              <ion-avatar item-start>
+                <img src="assets/imgs/generic-avatar.png">
+              </ion-avatar>
+              <h2>Ciclano</h2>
+            </ion-item>   
+
+            <ion-item>
+                <ion-avatar item-start>
+                  <img src="assets/imgs/generic-avatar.png">
+                </ion-avatar>
+                <h2>Maria</h2>
+              </ion-item>   
+
+              <ion-item>
+                  <ion-avatar item-start>
+                    <img src="assets/imgs/generic-avatar.png">
+                  </ion-avatar>
+                  <h2>José</h2>
+                </ion-item>   
+        
+       
+      </ion-list>
+
+</ion-content>

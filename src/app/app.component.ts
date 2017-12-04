@@ -1,3 +1,5 @@
+import { FormeePage } from './../pages/formee/formee';
+import { FormePage } from './../pages/forme/forme';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';

@@ -1,0 +1,58 @@
+
+<ion-menu [content]="mycontent" persistent="true" type="overlay"  style="width: 130px"  menu-close>
+        <ion-content style="width: 130px">
+            <div style="width:130px; height: 25%; background-color: #f53d3d">
+                <div style="position: absolute; height: 100px; width: 100px; border-radius: 100px 100px 100px 100px; background-color: white;
+                            margin-left: 8%; margin-top: 20px; background-image: url(assets/imgs/foto_profile.jpg);
+                             background-size: contain;
+                             border: solid 1px #fff">
+                </div>
+                <div style="position: absolute; width: 100%; margin-top: 125px; text-align: center; " align="center">
+                    <span style="color: white">Hawks69</span>
+                </div>
+                
+
+            </div>
+            <div style="width: 130px; height: 100%; background-color:rgba(0, 0, 0, 0.8);" >
+                <button style="width:100%; height: 15%; background-color: black" color="danger" menuClose detail-none>
+                   <div>
+                      <ion-icon style="font-size: 30px" name='home' color="danger"></ion-icon>
+                      <br><br>
+                      <label style="font-size: 13px; color: white">Home</label>
+                   </div>
+                </button>
+                <button style="width:100%; height: 15%; background-color: black" color="danger" (click)="ChamaConta()" menuClose detail-none>
+                        <div>
+                           <ion-icon style="font-size: 30px" name='contact' color="danger"></ion-icon>
+                           <br><br>
+                           <label style="font-size: 13px; color: white">Profile</label>
+                        </div>
+                </button>
+                <button style="width:100%; height: 15%; background-color: black" color="danger">
+                        <div>
+                           <ion-icon style="font-size: 30px" name='options' color="danger"></ion-icon>
+                           <br><br>
+                           <label style="font-size: 13px; color: white">Settings</label>
+                        </div>
+                </button>
+                <button style="width:100%; height: 15%; background-color: black" color="danger" (click)="Logoff()">
+                        <div>
+                           <ion-icon style="font-size: 30px" name='power' color="danger"></ion-icon>
+                           <br><br>
+                           <label style="font-size: 13px; color: white">Logout</label>
+                        </div>
+                </button>
+               
+            </div>
+          
+        </ion-content>
+      </ion-menu>
+      
+      <ion-nav #mycontent [root]="rootPage"></ion-nav>
+
+
+<ion-tabs color="danger" id="tabs" class="ios">
+    <ion-tab [root]="formeeRoot" tabTitle="Home" tabIcon="home" tabBadge="21" tabBadgeStyle="light"></ion-tab>
+    <ion-tab [root]="cameraRoot" tabTitle="Camera" tabIcon="camera"></ion-tab>
+    <ion-tab [root]="chatRoot" tabTitle="Chat" tabIcon="chatbubbles" tabBadge="11" tabBadgeStyle="light"></ion-tab>
+</ion-tabs>

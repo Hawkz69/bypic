@@ -1,0 +1,43 @@
+
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+  
+
+</ion-header>
+
+
+<ion-content padding color="danger">
+
+    <ion-list style="margin-top: 10%">
+        
+          <ion-item>
+            <ion-label floating color="dark">Username</ion-label>
+            <ion-input type="text" color="danger"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating color="dark">Password</ion-label>
+            <ion-input type="password" color="danger"></ion-input>
+          </ion-item>
+        
+        </ion-list>
+    
+        <button ion-button full color="danger" (click)="ChamaHome()">Log in</button>
+        <br>
+        <a href="#" class="linka">Forgot a password?</a>
+        <br><br>
+        <div style="width: 20" align="center">
+          <span>Or</span>
+        </div>
+        <br>
+        <button ion-button full icon-left color="facebook">
+            <ion-icon name="logo-facebook"></ion-icon>
+            Log in with facebook
+          </button>
+    
+
+</ion-content>

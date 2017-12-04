@@ -1,0 +1,47 @@
+<ion-header>
+    
+      <ion-navbar  color="danger">
+        <ion-title>Cadastro</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+
+<ion-content style="width: 100%">
+    <ion-list>
+        
+          <ion-item>
+            <ion-label floating color="dark">Username</ion-label>
+            <ion-input type="text" color="danger"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label floating color="dark">Email</ion-label>
+              <ion-input type="email" color="danger"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating color="dark">Celular</ion-label>
+                <ion-input type="celphone" color="danger"></ion-input>
+              </ion-item>
+        
+          <ion-item>
+            <ion-label floating color="dark">Password</ion-label>
+            <ion-input type="password" color="danger"></ion-input>
+          </ion-item><br>
+
+          <ion-item>
+              <ion-label>Birth date</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+            </ion-item><br>
+
+            <ion-item>
+                <ion-label>Terms and conditions</ion-label>
+                <ion-radio checked="false" value="go"></ion-radio>
+              </ion-item>
+        
+        </ion-list>
+    
+        <button ion-button full color="danger">Cadastrar</button>
+      
+    </ion-content>
+    

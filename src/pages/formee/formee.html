@@ -11,15 +11,17 @@
         </button>
       </ion-buttons>   
     </ion-toolbar>
-    <ion-toolbar>
-        <ion-segment [(ngModel)]="icons" color="danger">
-          <ion-segment-button value="camera">
+    <ion-toolbar  mode="md">
+      <div style="width: 100%;" >
+        <ion-segment name="md-segment" mode="md" style="width: 100%" [(ngModel)]="icons" color="danger">
+          <ion-segment-button value="camera" style="width: 100%;">
             <ion-icon name="pin"></ion-icon>
           </ion-segment-button>
           <ion-segment-button value="bookmark">
             <ion-icon name="people"></ion-icon>
           </ion-segment-button>
         </ion-segment>
+      </div>
       </ion-toolbar>
   </ion-header>
 
@@ -27,7 +29,8 @@
 
 
 <ion-content>
-   
+  <div #map id="map" style="height:100%;"></div>
+
     <ion-list inline>
         <ion-list-header>
             Novos envios!

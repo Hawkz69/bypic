@@ -2,6 +2,15 @@ import { CcountPage } from './../ccount/ccount';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import {
+ GoogleMaps,
+ GoogleMap,
+ GoogleMapsEvent,
+ GoogleMapOptions,
+ CameraPosition,
+ MarkerOptions,
+ Marker
+} from '@ionic-native/google-maps';
 
 /**
  * Generated class for the FormeePage page.
@@ -14,12 +23,15 @@ import { Geolocation } from '@ionic-native/geolocation';
 @Component({
   selector: 'page-formee',
   templateUrl: 'formee.html',
+
 })
 export class FormeePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
+  map: GoogleMap;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, private googleMaps: GoogleMaps) {
   }
 
+  lat : String;
+  lon : String;
   
   ionViewDidLoad() {
     this.geolocation.getCurrentPosition().then((resp) => {
@@ -30,6 +42,52 @@ export class FormeePage {
     }).catch((error) => {
       console.log('Error getting location', error);
     });
+
+  }
+
+  ngAfterViewInit() {
+    this.loadMap();
+    }
+
+
+   loadMap() {
+    let mapOptions: GoogleMapOptions = {
+      camera: {
+        target: {
+          lat: lat,
+          lng: lon
+        },
+        zoom: 18,
+        tilt: 30
+      }
+    };
+    let element: HTMLElement = document.getElementById('map');
+    //let map: GoogleMap = this.googleMaps.create(element);
+    this.map = GoogleMaps.create(element, mapOptions);
+
+
+    this.map.one(GoogleMapsEvent.MAP_READY)
+      .then(() => {
+        console.log('Map is ready!');
+
+        // Now you can use all methods safely.
+        this.map.addMarker({
+            title: 'Ionic',
+            icon: 'blue',
+            animation: 'DROP',
+            position: {
+              lat: lat,
+              lng: lon
+            }
+          })
+          .then(marker => {
+            marker.on(GoogleMapsEvent.MARKER_CLICK)
+              .subscribe(() => {
+                alert('clicked');
+              });
+          });
+
+      });
   }
 
 }
